@@ -41,7 +41,7 @@ const Register = () => {
       .register(inputs)
       .then((res) => {
         setNotification({
-          text: `User ${res.username} Registered`,
+          text: `User ${res.username} Registered, You can now Log In`,
           style: "success",
         });
         setInputs({
