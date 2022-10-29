@@ -33,7 +33,22 @@ const register = async (newUserData) => {
   return res.data;
 };
 
+const login = async (userData) => {
+  const { username, password } = userData;
+
+  const users = await getAll();
+  const foundUser = users.find((user) => user.username === username);
+  if(!foundUser) throw new Error("User Doesn't Exist")
+
+  const passwordsMatch = await bcrypt.compare(password, foundUser.password)
+  if(!passwordsMatch) throw new Error("Incorrect Password")
+
+  localStorage.setItem("user", foundUser.id);
+  return {username: foundUser.username, email: foundUser.email, id: foundUser.id}
+}
+
 export default {
   getAll,
   register,
+  login
 };

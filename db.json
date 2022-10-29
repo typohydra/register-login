@@ -5,6 +5,12 @@
       "email": "john@mail.com",
       "password": "$2a$10$0qk8qPTq5SKLHPaCYc4fUOxcAoFDTSJnAnnQrp5CdBNeemjgBFFOW",
       "id": 1
+    },
+    {
+      "username": "mila",
+      "email": "mila@email.com",
+      "password": "$2a$10$OqfLYYmYV2DOsw9cc1H.rupfl8eRzhzim9XkgjcUf4.3WETmCqPpu",
+      "id": 2
     }
   ]
 }
