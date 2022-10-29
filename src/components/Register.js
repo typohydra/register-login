@@ -39,12 +39,18 @@ const Register = () => {
 
     usersServices
       .register(inputs)
-      .then((res) =>
+      .then((res) => {
         setNotification({
           text: `User ${res.username} Registered`,
           style: "success",
-        })
-      )
+        });
+        setInputs({
+          username: "",
+          email: "",
+          password: "",
+          repeatPassword: "",
+        });
+      })
       .catch((error) =>
         setNotification({ text: error.message, style: "error" })
       );
@@ -59,27 +65,31 @@ const Register = () => {
           type="text"
           placeholder="Username"
           name="username"
+          value={inputs.username}
           onChange={handleInputChange}
         />
         <input
           type="email"
           placeholder="Email"
           name="email"
+          value={inputs.email}
           onChange={handleInputChange}
         />
         <input
           type="password"
           placeholder="Password"
           name="password"
+          value={inputs.password}
           onChange={handleInputChange}
         />
         <input
           type="password"
           placeholder="Repeat Password"
           name="repeatPassword"
+          value={inputs.repeatPassword}
           onChange={handleInputChange}
         />
-        <input type="submit" value="submit" />
+        <input type="submit" value="sign up" />
       </form>
     </div>
   );
