@@ -1,5 +1,5 @@
 const Notification = ({ notification }) => {
-  if (!notification) return;
+  if (!notification) return <div className="notification"></div>;
 
   const error = {
     color: "red",
@@ -10,7 +10,10 @@ const Notification = ({ notification }) => {
   };
 
   return (
-    <div style={notification.style === "error" ? error : success}>
+    <div
+      className="notification"
+      style={notification.style === "error" ? error : success}
+    >
       {notification.text}
     </div>
   );

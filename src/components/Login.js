@@ -52,11 +52,12 @@ const Login = ({ setUserID }) => {
   };
 
   return (
-    <div>
-      <h1>Log In</h1>
+    <main className="main">
+      <h1 className="main__h1">Log In</h1>
       <Notification notification={notification} />
-      <form onSubmit={handleSubmit}>
+      <form className="main__form" onSubmit={handleSubmit}>
         <input
+          className="main__form__input"
           type="text"
           placeholder="Username"
           name="username"
@@ -64,15 +65,20 @@ const Login = ({ setUserID }) => {
           onChange={handleInputChange}
         />
         <input
+          className="main__form__input"
           type="password"
           placeholder="Password"
           name="password"
           value={inputs.password}
           onChange={handleInputChange}
         />
-        <input type="submit" value="log in" />
+        <input
+          className="main__form__input--submit"
+          type="submit"
+          value="log in"
+        />
       </form>
-    </div>
+    </main>
   );
 };
 

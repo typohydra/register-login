@@ -57,11 +57,12 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
+    <main className="main">
+      <h1 className="main__h1">Register</h1>
       <Notification notification={notification} />
-      <form onSubmit={handleSubmit}>
+      <form className="main__form" onSubmit={handleSubmit}>
         <input
+          className="main__form__input"
           type="text"
           placeholder="Username"
           name="username"
@@ -69,6 +70,7 @@ const Register = () => {
           onChange={handleInputChange}
         />
         <input
+          className="main__form__input"
           type="email"
           placeholder="Email"
           name="email"
@@ -76,6 +78,7 @@ const Register = () => {
           onChange={handleInputChange}
         />
         <input
+          className="main__form__input"
           type="password"
           placeholder="Password"
           name="password"
@@ -83,15 +86,20 @@ const Register = () => {
           onChange={handleInputChange}
         />
         <input
+          className="main__form__input"
           type="password"
           placeholder="Repeat Password"
           name="repeatPassword"
           value={inputs.repeatPassword}
           onChange={handleInputChange}
         />
-        <input type="submit" value="sign up" />
+        <input
+          className="main__form__input--submit"
+          type="submit"
+          value="sign up"
+        />
       </form>
-    </div>
+    </main>
   );
 };
 

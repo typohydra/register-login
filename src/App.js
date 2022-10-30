@@ -27,12 +27,12 @@ const App = () => {
   if (userID) {
     return (
       <Router>
-        <div>
-          <Link style={style} to="/">
+        <nav className="nav">
+          <Link className="nav__link" style={style} to="/">
             home
           </Link>
-          <button onClick={handleLogout}>Log out</button>
-        </div>
+          <button className="nav__btn--logout" onClick={handleLogout}>Log out</button>
+        </nav>
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -43,17 +43,17 @@ const App = () => {
 
   return (
     <Router>
-      <div>
-        <Link style={style} to="/">
+      <nav className="nav">
+        <Link className="nav__link" style={style} to="/">
           home
         </Link>
-        <Link style={style} to="/register">
+        <Link className="nav__link" style={style} to="/register">
           register
         </Link>
-        <Link style={style} to="/login">
+        <Link className="nav__link" style={style} to="/login">
           login
         </Link>
-      </div>
+      </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
